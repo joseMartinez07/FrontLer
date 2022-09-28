@@ -1,22 +1,27 @@
-<div style="text-align: center;">
-  <h1><b>Listado de personas</b></h1>
-  <form >
-    <p>ID <input type="texto" id="id" name="id" #id></p>
-    <p>Nombre <input type="text" id="nombre" name="nombre" #nombre></p>
-    <p>Cédula <input type="text" id="cedula" name="cedula" #cedula></p>
-    <p>Edad <input type="number" id="edad" name="edad" #edad></p>
-    <p>Fecha de nacimiento <input type="date" id="fecha" name="fecha" #fecha></p>
-  </form>
+<div style="text-align: center;" class="div_1">
+  <h1 class="titulo"><b>Listado de Personas</b></h1>
   <div>
-    <button mat-flat-button color="primary" (click)="objRegistrar(nombre.value, cedula.value, edad.value, fecha.value)">Registrar</button>
-    <button mat-flat-button color="primary" (click)="objActualizar(id.value, nombre.value, cedula.value, edad.value, fecha.value)">Actualizar</button>
+    <div> 
+      <p class="id">ID <input type="texto" id="id" name="id" #id></p>
+      <p class="nombre">Nombre <input type="text" id="nombre" name="nombre" #nombre></p>
+    </div>
+    <div>
+      <p class="cedula">Cédula <input type="text" id="cedula" name="cedula" #cedula></p>
+      <p class="edad">Edad <input type="number" id="edad" name="edad" #edad></p>
+    </div>
+    
+    <p class="fecha">Fecha de nacimiento<input type="date" id="fecha" name="fecha" #fecha></p>
+  </div>
+  <div>
+    <button mat-flat-button color="primary" style="margin-right: 13px;" (click)="objRegistrar(nombre.value, cedula.value, edad.value, fecha.value)">Registrar</button>
+    <button mat-flat-button color="primary" style="margin-left: 13px;" (click)="objActualizar(id.value, nombre.value, cedula.value, edad.value, fecha.value)">Actualizar</button>
   </div>
 </div>
 
 <br>
 <br>
 
-<table mat-table [dataSource]="persona" class="mat-elevation-z8" style="width: 100%;">
+<table mat-table [dataSource]="persona" class="mat-elevation-z8" style="width: 50%;">
   <!--Column id-->
   <ng-container matColumnDef="identi">
     <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -25,20 +30,20 @@
 
   <!--Column cedula-->
   <ng-container matColumnDef="cedula">
-    <th mat-header-cell *matHeaderCellDef> CEDULA </th>
+    <th mat-header-cell *matHeaderCellDef > CEDULA </th>
     <td mat-cell *matCellDef="let persona"> {{persona.num_cedula}} </td>
   </ng-container>
 
   <!--Column nombre-->
   <ng-container matColumnDef="nombrepersona">
-    <th mat-header-cell *matHeaderCellDef> NOMBRE </th>
+    <th mat-header-cell *matHeaderCellDef > NOMBRE </th>
     <td mat-cell *matCellDef="let persona"> {{persona.nombre}} </td>
   </ng-container>
 
   <!--Column fecha-->
   <ng-container matColumnDef="fecha_na">
-    <th mat-header-cell *matHeaderCellDef> FECHA DE NACIMIENTO </th>
-    <td mat-cell *matCellDef="let persona"> {{persona.fecha_n}} </td>
+    <th mat-header-cell *matHeaderCellDef > FECHA DE NACIMIENTO </th>
+    <td mat-cell *matCellDef="let persona">{{persona.fecha_n}}</td>
   </ng-container>
 
   <!--Column edad-->
